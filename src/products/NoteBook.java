@@ -5,7 +5,7 @@ public class NoteBook extends Product{
     private int pageCount;
     private boolean isHardCover;
 
-    private static int numberOfBooksAdded = 1;
+    private static int numberOfNoteBooksAdded = 1;
 
     public NoteBook(String title, Double price, int pageCount, boolean isHardCover) {
 
@@ -41,8 +41,8 @@ public class NoteBook extends Product{
 
     @Override
     protected String generateId() {
-        String output = "2" + String.format("%03d", numberOfBooksAdded);
-        numberOfBooksAdded++;
+        String output = "2" + String.format("%03d", numberOfNoteBooksAdded);
+        numberOfNoteBooksAdded++;
         return output;
     }
 }
