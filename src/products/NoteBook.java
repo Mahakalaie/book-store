@@ -1,5 +1,7 @@
 package products;
 
+import java.util.Locale;
+
 public class NoteBook extends Product{
 
     private int pageCount;
@@ -41,7 +43,7 @@ public class NoteBook extends Product{
 
     @Override
     protected String generateId() {
-        String output = "2" + String.format("%03d", numberOfNoteBooksAdded);
+        String output = String.format(Locale.ENGLISH,"%d%03d", 2, numberOfNoteBooksAdded);
         numberOfNoteBooksAdded++;
         return output;
     }

@@ -1,5 +1,7 @@
 package products;
 
+import java.util.Locale;
+
 public class Accessory extends  Product{
 
     private String color;
@@ -23,7 +25,7 @@ public class Accessory extends  Product{
 
     @Override
     protected String generateId() {
-        String output = "3" + String.format("%03d", numberOfAccessoriesAdded);
+        String output = String.format(Locale.ENGLISH,"%d%03d", 3, numberOfAccessoriesAdded);
         numberOfAccessoriesAdded++;
         return output;
     }

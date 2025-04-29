@@ -3,6 +3,7 @@ package inventory;
 import products.Product;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Inventory<T extends Product> {
 
@@ -42,11 +43,7 @@ public class Inventory<T extends Product> {
 
     public void removeItemsById(int id) {
 
-        for(T t : items)
-        {
-            if(t.getId().equals(Integer.toString(id)))
-                items.remove(t);
-        }
+        items.removeIf(t -> t.getId().equals(Integer.toString(id)));
     }
 
     public T findItemsById(int id) {
@@ -66,7 +63,7 @@ public class Inventory<T extends Product> {
 
         for(T t : items)
         {
-            System.out.print(t.toString());
+            System.out.println(t.toString());
         }
     }
 }

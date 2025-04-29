@@ -1,5 +1,7 @@
 package products;
 
+import java.util.Locale;
+
 public class Book extends Product{
 
     private String author;
@@ -36,7 +38,7 @@ public class Book extends Product{
 
     @Override
     protected String generateId() {
-        String output = "1" + String.format("%03d", numberOfBooksAdded);
+        String output = String.format(Locale.ENGLISH,"%d%03d", 1, numberOfBooksAdded);
         numberOfBooksAdded++;
         return output;
     }
