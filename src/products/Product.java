@@ -6,11 +6,11 @@ public abstract class Product {
     private Double price;
     private String id;
 
-    public Product(String title, Double price, String id) {
+    public Product(String title, Double price) {
 
         setTitle(title);
         setPrice(price);
-        setId(id);
+        setId(generateId());
     }
 
     public String getTitle() { return title; }
